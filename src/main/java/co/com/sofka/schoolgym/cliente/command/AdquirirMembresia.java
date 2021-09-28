@@ -1,21 +1,27 @@
-package co.com.sofka.schoolgym.cliente.events;
+package co.com.sofka.schoolgym.cliente.command;
 
-import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofka.schoolgym.cliente.Membresia;
+import co.com.sofka.domain.generic.Command;
+import co.com.sofka.schoolgym.cliente.values.ClienteId;
 import co.com.sofka.schoolgym.cliente.values.MembresiaId;
 import co.com.sofka.schoolgym.cliente.values.Pago;
 import co.com.sofka.schoolgym.generic.values.FechaAdquirida;
 
-public class MembresiaAdquirida extends DomainEvent {
+public class AdquirirMembresia extends Command {
+    private final ClienteId clienteId;
     private final MembresiaId membresiaId;
     private final Pago pago;
     private final FechaAdquirida fechaAdquirida;
 
-    public MembresiaAdquirida(MembresiaId membresiaId, Pago pago, FechaAdquirida fechaAdquirida) {
-        super("schoolgym.cliente.membresiaadquirida");
+    public AdquirirMembresia(ClienteId clienteId, MembresiaId membresiaId,
+                             Pago pago, FechaAdquirida fechaAdquirida) {
+        this.clienteId = clienteId;
         this.membresiaId = membresiaId;
         this.pago = pago;
         this.fechaAdquirida = fechaAdquirida;
+    }
+
+    public ClienteId getClienteId() {
+        return clienteId;
     }
 
     public MembresiaId getMembresiaId() {

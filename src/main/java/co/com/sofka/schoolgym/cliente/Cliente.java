@@ -1,11 +1,17 @@
 package co.com.sofka.schoolgym.cliente;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofka.schoolgym.cliente.events.*;
 import co.com.sofka.schoolgym.cliente.values.ClienteId;
+import co.com.sofka.schoolgym.cliente.values.MembresiaId;
+import co.com.sofka.schoolgym.cliente.values.Pago;
 import co.com.sofka.schoolgym.generic.values.Direccion;
 import co.com.sofka.schoolgym.cliente.values.Nombre;
+import co.com.sofka.schoolgym.generic.values.FechaAdquirida;
 import co.com.sofka.schoolgym.rutina.values.RutinaId;
+
+import java.util.List;
 
 public class Cliente extends AggregateEvent<ClienteId> {
 
@@ -22,14 +28,27 @@ public class Cliente extends AggregateEvent<ClienteId> {
                 membresia, rutinaId)).apply();
     }
 
-    public void adquirirMembresia()
+    private Cliente(ClienteId clienteId)
     {
-        appendChange(new MembresiaAdquirida(membresia)).apply();
+        super(clienteId);
+        subscribe(new ClienteEventChange(this));
+    }
+
+    public static Cliente from(ClienteId clienteId, List<DomainEvent> events)
+    {
+        var cliente = new Cliente(clienteId);
+        events.forEach(cliente::applyEvent);
+        return cliente;
+    }
+
+    public void adquirirMembresia(MembresiaId membresiaId, Pago pago, FechaAdquirida fechaAdquirida)
+    {
+        appendChange(new MembresiaAdquirida(membresiaId, pago, fechaAdquirida)).apply();
     }
 
     public void aprobarMembresia()
     {
-        appendChange(new MembresiaAdquirida(membresia)).apply();
+        appendChange(new MembresiaAprobada(membresia)).apply();
 
     }
     public void rechazarMembresia()
@@ -62,7 +81,7 @@ public class Cliente extends AggregateEvent<ClienteId> {
     public void actualizarDatosPersonales(Nombre nombre, String edad, Direccion direccion,
                                           Membresia membresia, RutinaId rutinaId)
     {
-        appendChange(new datosPersonalesActualizados(nombre, edad, direccion, membresia, rutinaId))
+        appendChange(new DatosPersonalesActualizados(nombre, edad, direccion))
                 .apply();
     }
 

@@ -11,9 +11,11 @@ public class Membresia extends Entity<MembresiaId> {
     private EstadoMembresia estadoMembresia;
     private FechaAdquirida fechaAdquirida;
 
-    public Membresia(MembresiaId entityId) {
-        super(entityId);
+    public Membresia(MembresiaId membresiaId, Pago pago, FechaAdquirida fechaAdquirida) {
+        super(membresiaId);
         this.estadoMembresia = new EstadoMembresia("PENDIENTE");
+        this.pago = pago;
+        this.fechaAdquirida = fechaAdquirida;
     }
 
     public void activar()
@@ -38,5 +40,17 @@ public class Membresia extends Entity<MembresiaId> {
     }
     public void cambiarPlanQuincenal() {
         this.estadoMembresia = new EstadoMembresia("QUINCENAL");
+    }
+
+    public Pago pago() {
+        return pago;
+    }
+
+    public EstadoMembresia estadoMembresia() {
+        return estadoMembresia;
+    }
+
+    public FechaAdquirida fechaAdquirida() {
+        return fechaAdquirida;
     }
 }

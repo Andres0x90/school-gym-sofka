@@ -11,8 +11,8 @@ public class Nombre implements ValueObject<Nombre.props> {
 
     public Nombre(String nombres,String apellidos)
     {
-        this.nombres = Objects.requireNonNull(nombres);
-        this.apellidos = Objects.requireNonNull(apellidos);
+        this.nombres = Objects.requireNonNull(nombres, "El campo nombre no debe estar vacio");
+        this.apellidos = Objects.requireNonNull(apellidos, "El campo apellido no debe estar vacio");
     }
 
     @Override
@@ -29,6 +29,15 @@ public class Nombre implements ValueObject<Nombre.props> {
             }
         };
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Nombre nombre = (Nombre) o;
+        return nombres.equals(nombre.nombres) && apellidos.equals(nombre.apellidos);
+    }
+
 
     protected interface props
     {
