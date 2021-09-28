@@ -2,8 +2,8 @@ package co.com.sofka.schoolgym.cliente;
 
 import co.com.sofka.domain.generic.EventChange;
 import co.com.sofka.schoolgym.cliente.events.*;
+import co.com.sofka.schoolgym.generic.events.DatosPersonalesActualizados;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Objects;
 

@@ -6,6 +6,7 @@ import co.com.sofka.schoolgym.cliente.events.*;
 import co.com.sofka.schoolgym.cliente.values.ClienteId;
 import co.com.sofka.schoolgym.cliente.values.MembresiaId;
 import co.com.sofka.schoolgym.cliente.values.Pago;
+import co.com.sofka.schoolgym.generic.events.DatosPersonalesActualizados;
 import co.com.sofka.schoolgym.generic.values.Direccion;
 import co.com.sofka.schoolgym.generic.values.Nombre;
 import co.com.sofka.schoolgym.generic.values.FechaAdquirida;
@@ -78,8 +79,7 @@ public class Cliente extends AggregateEvent<ClienteId> {
     {
         appendChange(new RutinaCambiada(rutinaId)).apply();
     }
-    public void actualizarDatosPersonales(Nombre nombre, String edad, Direccion direccion,
-                                          Membresia membresia, RutinaId rutinaId)
+    public void actualizarDatosPersonales(Nombre nombre, String edad, Direccion direccion)
     {
         appendChange(new DatosPersonalesActualizados(nombre, edad, direccion))
                 .apply();

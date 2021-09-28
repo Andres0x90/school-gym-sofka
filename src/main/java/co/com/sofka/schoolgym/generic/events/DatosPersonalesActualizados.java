@@ -1,4 +1,4 @@
-package co.com.sofka.schoolgym.cliente.events;
+package co.com.sofka.schoolgym.generic.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofka.schoolgym.generic.values.Nombre;
@@ -10,7 +10,7 @@ public class DatosPersonalesActualizados extends DomainEvent {
     private final Direccion direccion;
 
     public DatosPersonalesActualizados(Nombre nombre, String edad, Direccion direccion) {
-        super("schoolgym.cliente.datospersonalesactualizados");
+        super("schoolgym.generic.datospersonalesactualizados");
 
         this.nombre = nombre;
         this.edad = edad;
