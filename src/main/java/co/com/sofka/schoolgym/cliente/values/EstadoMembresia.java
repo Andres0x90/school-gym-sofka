@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class EstadoMembresia implements ValueObject<String> {
 
-    private String estado;
+    private final String estado;
 
     public EstadoMembresia(String estado)
     {

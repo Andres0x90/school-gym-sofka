@@ -6,8 +6,8 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Pago implements ValueObject<Pago.props> {
-    protected BigDecimal valor;
-    protected String plan;
+    private final BigDecimal valor;
+    private final String plan;
 
     public Pago(BigDecimal valor, String plan) {
         this.valor = Objects.requireNonNull(valor, "El campo valor no debe estar vacio");

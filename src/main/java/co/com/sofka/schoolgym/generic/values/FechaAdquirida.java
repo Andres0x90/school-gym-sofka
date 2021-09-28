@@ -7,8 +7,8 @@ import java.util.Objects;
 
 public class FechaAdquirida implements ValueObject<FechaAdquirida.props> {
 
-    protected Date fechaObtenido;
-    protected Date fechaDeRenovacion;
+    private final Date fechaObtenido;
+    private final Date fechaDeRenovacion;
 
     public FechaAdquirida(Date fechaObtenido, Date fechaDeRenovacion) {
         this.fechaObtenido = Objects.requireNonNull(fechaObtenido,

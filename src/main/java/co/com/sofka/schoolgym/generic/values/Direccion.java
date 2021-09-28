@@ -5,7 +5,7 @@ import co.com.sofka.domain.generic.ValueObject;
 import java.util.Objects;
 
 public class Direccion implements ValueObject<Direccion.props> {
-    final String tipo, calle, numero, barrio;
+    private final String tipo, calle, numero, barrio;
 
     public Direccion(String tipo, String calle, String numero, String barrio) {
         this.tipo = Objects.requireNonNull(tipo, "El campo tipo no debe estar vacio");
