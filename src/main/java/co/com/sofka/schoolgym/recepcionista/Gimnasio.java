@@ -39,6 +39,18 @@ public class Gimnasio extends Entity<GimnasioId> {
     {
         this.clientesIdAdentro = (List<ClienteId>) clientesIdAdentro.stream().filter(
                 clienteFilterId-> !clienteFilterId.equals(clienteId))
-                .findFirst().orElseThrow(IllegalArgumentException::new);
+                .findFirst().orElseThrow(IllegalArgumentException::new); 
+    }
+
+    public String nombre() {
+        return nombre;
+    }
+
+    public List<ClienteId> clientesIdAdentro() {
+        return clientesIdAdentro;
+    }
+
+    public EstadoGimnasio estado() {
+        return estado;
     }
 }

@@ -19,4 +19,8 @@ public class Cuenta extends Entity<CuentaId> {
    {
        this.clave = nuevaClave;
    }
+
+    public Usuario usuario() {
+        return usuario;
+    }
 }
