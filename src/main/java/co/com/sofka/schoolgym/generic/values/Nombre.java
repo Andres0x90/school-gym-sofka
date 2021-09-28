@@ -1,4 +1,4 @@
-package co.com.sofka.schoolgym.cliente.values;
+package co.com.sofka.schoolgym.generic.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 

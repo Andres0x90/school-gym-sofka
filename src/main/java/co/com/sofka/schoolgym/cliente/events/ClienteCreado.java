@@ -4,7 +4,7 @@ import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofka.schoolgym.cliente.Membresia;
 import co.com.sofka.schoolgym.cliente.values.ClienteId;
 import co.com.sofka.schoolgym.generic.values.Direccion;
-import co.com.sofka.schoolgym.cliente.values.Nombre;
+import co.com.sofka.schoolgym.generic.values.Nombre;
 import co.com.sofka.schoolgym.rutina.values.RutinaId;
 
 public class ClienteCreado extends DomainEvent {

@@ -1,14 +1,14 @@
-package co.com.sofka.schoolgym.cliente.command;
+package co.com.sofka.schoolgym.cliente.commands;
 
 import co.com.sofka.domain.generic.Command;
 import co.com.sofka.schoolgym.cliente.Membresia;
 import co.com.sofka.schoolgym.cliente.values.ClienteId;
 
-public class VencerMembresia extends Command {
+public class RechazarMembresia extends Command {
     private final ClienteId clienteId;
     private  final Membresia membresia;
 
-    public VencerMembresia(ClienteId clienteId, Membresia membresia) {
+    public RechazarMembresia(ClienteId clienteId, Membresia membresia) {
         this.clienteId = clienteId;
         this.membresia = membresia;
     }

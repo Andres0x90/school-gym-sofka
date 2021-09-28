@@ -1,4 +1,4 @@
-package co.com.sofka.schoolgym.cliente.command;
+package co.com.sofka.schoolgym.cliente.commands;
 
 import co.com.sofka.domain.generic.Command;
 import co.com.sofka.schoolgym.cliente.values.ClienteId;

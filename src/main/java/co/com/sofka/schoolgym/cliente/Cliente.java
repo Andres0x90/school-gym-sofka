@@ -7,7 +7,7 @@ import co.com.sofka.schoolgym.cliente.values.ClienteId;
 import co.com.sofka.schoolgym.cliente.values.MembresiaId;
 import co.com.sofka.schoolgym.cliente.values.Pago;
 import co.com.sofka.schoolgym.generic.values.Direccion;
-import co.com.sofka.schoolgym.cliente.values.Nombre;
+import co.com.sofka.schoolgym.generic.values.Nombre;
 import co.com.sofka.schoolgym.generic.values.FechaAdquirida;
 import co.com.sofka.schoolgym.rutina.values.RutinaId;
 
